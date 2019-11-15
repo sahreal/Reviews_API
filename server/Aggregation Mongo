@@ -1,0 +1,34 @@
+Aggregate, MongoDB, merge two collections into a new collection
+
+
+db.Characteristics.aggregate([
+    {
+    $match:{
+          id : {$lte : 3500000}  
+       }
+      },
+    {
+    $lookup: {
+      from: "Characteristic_Reviews",
+      localField: "id",
+      foreignField: "characteristic_id",
+      as: "NewChar"
+    }
+  },
+  {
+    $replaceRoot: {
+      newRoot: {
+        $mergeObjects: [{ $arrayElemAt: ["$NewChar", 0] }, "$$ROOT"]
+      }
+    }
+  },
+  { $project: { NewChar: 0 } },
+   { $out: "NewChar" }
+]);
+
+
+
+
+
+
+

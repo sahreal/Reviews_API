@@ -1,0 +1,79 @@
+{
+  "name": "greenfield",
+  "version": "1.0.0",
+  "description": "eCommerce website",
+  "main": "server/index.js",
+  "scripts": {
+    "test": "jest --collectCoverage=true",
+    "build-prod": "webpack -p --mode production",
+    "start": "build-prod & pm2 server/index.js",
+    "server-dev": "nodemon server/index.js",
+    "react-dev": "webpack -d --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Precise-Pangolins/greenfield.git"
+  },
+  "author": "Richard Horvath, Brittany Yee, Lauren Albert",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Precise-Pangolins/greenfield/issues"
+  },
+  "homepage": "https://github.com/Precise-Pangolins/greenfield#readme",
+  "devDependencies": {
+    "@babel/core": "^7.6.4",
+    "@babel/preset-env": "^7.6.3",
+    "@babel/preset-react": "^7.6.3",
+    "babel-loader": "^8.0.6",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-latest": "^6.24.1",
+    "body-parser": "^1.19.0",
+    "css-loader": "^3.2.0",
+    "enzyme": "^3.10.0",
+    "enzyme-adapter-react-16": "^1.15.1",
+    "enzyme-to-json": "^3.4.3",
+    "express": "^4.17.1",
+    "jest": "^24.9.0",
+    "morgan": "^1.9.1",
+    "prettier": "^1.18.2",
+    "puppeteer": "^1.20.0",
+    "style-loader": "^1.0.0",
+    "url-loader": "^2.2.0",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.9"
+  },
+  "dependencies": {
+    "@babel/polyfill": "^7.6.0",
+    "@fortawesome/fontawesome-svg-core": "^1.2.25",
+    "@fortawesome/free-solid-svg-icons": "^5.11.2",
+    "@fortawesome/react-fontawesome": "^0.1.7",
+    "@material-ui/core": "^4.5.2",
+    "@material-ui/icons": "^4.5.1",
+    "@material-ui/lab": "^4.0.0-alpha.29",
+    "axios": "^0.19.0",
+    "compression": "^1.7.4",
+    "jquery": "^3.4.1",
+    "mongodb": "^3.3.3",
+    "mongoose": "^5.7.8",
+    "nodemon": "^1.19.4",
+    "query-string": "^6.8.3",
+    "react": "^16.10.2",
+    "react-dom": "^16.10.2",
+    "react-image-gallery": "^0.9.1",
+    "react-redux": "^7.1.1",
+    "react-scrollspy": "^3.4.0",
+    "react-share": "^3.0.1",
+    "redux": "^4.0.4",
+    "redux-devtools-extension": "^2.13.8",
+    "redux-thunk": "^2.3.0",
+    "uuidv4": "^5.0.1"
+  },
+  "jest": {
+    "snapshotSerializers": [
+      "enzyme-to-json/serializer"
+    ],
+    "setupFiles": [
+      "./tests/setUpTest.js"
+    ]
+  }
+}
