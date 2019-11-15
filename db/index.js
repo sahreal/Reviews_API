@@ -1,5 +1,6 @@
 var mongoose = require("mongoose");
-mongoose.connect("mongodb://localhost:27017/Reviews", err =>
+var config = require("config.js");
+mongoose.connect(`mongodb://${config.key}`, err =>
   err
     ? console.log(err, "error connecting to database")
     : console.log("Database is good to go!!!")
