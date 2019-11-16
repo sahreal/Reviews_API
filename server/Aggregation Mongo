@@ -31,4 +31,14 @@ db.Characteristics.aggregate([
 
 
 
+ sudo scp -i FirstAttempt.pem -r /usr/local/var/mongodb ubuntu@ec2-18-219-106-131.us-east-2.compute.amazonaws.com:~
 
+
+
+- Running the image to create the container -- map your port attach your volume forwarding EC2 port to docker conatiner's port
+ sudo docker run -d -p 27017:27017 -v ~/mongodb:/data/db mongo
+ -
+
+ -Check active container-
+sudo docker ps -a
+ -
