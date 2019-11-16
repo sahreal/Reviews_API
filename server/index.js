@@ -9,7 +9,7 @@ app.use(Parser.json());
 // app.use("/Reviews", router);
 
 //***************** GET *****************************
-app.get("loaderio-2d0417e7ab2a1f8f05ebae798acdcc1a/", (req, res) => {
+app.get("/loaderio-2d0417e7ab2a1f8f05ebae798acdcc1a/", (req, res) => {
   res.send("loaderio-2d0417e7ab2a1f8f05ebae798acdcc1a/");
 });
 
