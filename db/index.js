@@ -1,7 +1,8 @@
 var mongoose = require("mongoose");
 //var config = require("../config.js");
 mongoose.connect(
-  `mongodb://ec2-18-219-106-131.us-east-2.compute.amazonaws.com/Reviews`,
+  `mongodb://ec2-18-189-7-83.us-east-2.compute.amazonaws.com/Reviews`,
+  // `mongodb://ec2-18-219-106-131.us-east-2.compute.amazonaws.com/Reviews`,
   err =>
     err
       ? console.log(err, "error connecting to database")
