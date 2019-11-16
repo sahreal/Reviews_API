@@ -1,5 +1,5 @@
 var mongoose = require("mongoose");
-var config = require("config.js");
+var config = require("../config.js");
 mongoose.connect(`mongodb://${config.key}`, err =>
   err
     ? console.log(err, "error connecting to database")
