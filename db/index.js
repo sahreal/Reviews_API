@@ -1,13 +1,10 @@
 var mongoose = require("mongoose");
-//var config = require("../config.js");
+//Expired urls for EC2 instances
 // `mongodb://ec2-18-189-7-83.us-east-2.compute.amazonaws.com/Reviews`,
-// `mongodb://ec2-18-219-106-131.us-east-2.compute.amazonaws.com/Reviews`,
-mongoose.connect(
-  `mongodb:/ec2-3-133-59-240.us-east-2.compute.amazonaws.com/Reviews`,
-  err =>
-    err
-      ? console.log(err, "error connecting to database")
-      : console.log("Database is good to go!!!")
+mongoose.connect(`mongodb://localhost/Reviews`, err =>
+  err
+    ? console.log(err, "error connecting to database")
+    : console.log("Database is good to go!!!")
 );
 
 var Schema = mongoose.Schema;
@@ -59,18 +56,6 @@ const Characteristic_Reviews = new Schema(
   { collection: "Characteristic_Reviews" }
 );
 
-// const NewChar = new Schema(
-//   {
-//     id: Number,
-//     characteristic_id: Number,
-//     review_id: Number,
-//     value: Number,
-//     name: String,
-//     product_id: Number
-//   },
-//   { collection: "NewChar" }
-// );
-
 const PhotoResults = new Schema(
   {
     id: Number,
@@ -84,13 +69,8 @@ const ReviewList = mongoose.model("Reviews", Reviews);
 const PhotoList = mongoose.model("Photos", PhotoResults);
 const Meta = mongoose.model("NewChar", NewChar);
 const Char = mongoose.model("Characteristics", Characteristics);
-const CharReviews = mongoose.model(
-  "Characteristic_Reviews",
-  Characteristic_Reviews
-);
 
 module.exports.Char = Char;
-module.exports.CharReviews = CharReviews;
 module.exports.Meta = Meta;
 module.exports.ReviewList = ReviewList;
 module.exports.PhotoList = PhotoList;

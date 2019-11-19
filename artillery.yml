@@ -1,5 +1,5 @@
 config:
-  target: "localhost:3000/reviews/2/list"
+  target: "http://localhost:3000"
   phases:
     - duration: 60
       arrivalRate: 20
@@ -9,4 +9,4 @@ config:
 scenarios:
   - flow:
       - get:
-          url: "/docs"
+          url: "/reviews/182/meta"
